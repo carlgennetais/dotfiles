@@ -186,6 +186,7 @@ overview {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 // This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-at-startup "vicinae" "server"
 environment {
   XDG_CURRENT_DESKTOP "niri"
 }
@@ -290,6 +291,10 @@ recent-windows {
         Alt+grave       { next-window filter="app-id"; }
         Alt+Shift+grave { previous-window filter="app-id"; }
     }
+}
+
+binds {
+  Alt+Space hotkey-overlay-title="Open Vicinae" { spawn "vicinae" "toggle"; }
 }
 
 // Include dms files

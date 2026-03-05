@@ -19,6 +19,9 @@
       }
    },
    "theme": {
+      "light": {
+         "name": "tokyo-night"
+      },
       "dark": {
          "name": "tokyo-night"
       }
