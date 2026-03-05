@@ -49,7 +49,11 @@ gestures {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
     keyboard {
+        repeat-delay 300
+        repeat-rate 110
         xkb {
+            layout "us_qwerty-fr"
+
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
