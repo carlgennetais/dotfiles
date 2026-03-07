@@ -1,0 +1,21 @@
+binds {
+    // presenting
+    Mod+P hotkey-overlay-title="Present this window" { set-dynamic-cast-window;}
+    Mod+Shift+P hotkey-overlay-title="Stop sharing screen" { clear-dynamic-cast-target;}
+    Mod+Ctrl+P hotkey-overlay-title="Present this monitor" { set-dynamic-cast-monitor;}
+    Mod+Ctrl+Shift+F hotkey-overlay-title="Windowed fullscreen" { toggle-windowed-fullscreen; }
+    Mod+Shift+M hotkey-overlay-title="Mirror screen" repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name) & sleep 1 | niri message action move-column-to-monitor-right;"; }
+
+
+    // navigation
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+    Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K     { move-window-up-or-to-workspace-up; }
+    Mod+Shift+H     { move-column-left-or-to-monitor-left; }
+    Mod+Shift+L     { move-column-right-or-to-monitor-right; }
+    Mod+M hotkey-overlay-title="Move workspace to next monitor" {move-workspace-to-monitor-next;}
+
+    // apps
+    Alt+Space hotkey-overlay-title="Open Vicinae" { spawn "vicinae" "toggle"; }
+}
