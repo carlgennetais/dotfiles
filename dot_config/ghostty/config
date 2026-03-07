@@ -1,5 +1,5 @@
-# command = bash -c byobu
-command = /home/linuxbrew/.linuxbrew/bin/byobu
+# command = /usr/bin/fish
+command = export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH; /home/linuxbrew/.linuxbrew/bin/byobu
 
 # custom keybinds
 keybind = ctrl+page_up=csi:5;5~
@@ -12,8 +12,8 @@ font-size = 12
 
 # Window Configuration
 window-decoration = false
-window-padding-x = 6
-window-padding-y = 6
+# window-padding-x = 6
+# window-padding-y = 6
 background-opacity = 1.0
 background-blur-radius = 32
 
