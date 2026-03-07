@@ -1,0 +1,57 @@
+packages:
+  default:
+    brews:
+      - npm
+      - htop
+      - ncdu
+      - lazygit
+      - lazydocker
+      - fdupes
+      # Shell enhancements
+      - tmux
+      - byobu
+      # IDE
+      - neovim
+      - visidata
+      # Development tools
+      - gh
+      - glab
+      - git
+      - uv
+      - chezmoi
+      # media
+      - ffmpeg
+      - mat2
+      - imagemagick
+      # pdf
+      - qpdf
+      # - espanso
+    casks:
+      - "font-jetbrains-mono-nerd-font"
+      - "font-fira-code-nerd-font"
+      - "font-meslo-lg-nerd-font"
+      - "font-hack-nerd-font"
+      - "font-iosevka-nerd-font"
+    flatpaks:
+      - io.github.pwr_solaar.solaar
+      - io.gitlab.librewolf-community
+      - net.cozic.joplin_desktop
+      - com.slack.Slack
+      # - org.videolan.VLC
+  personal:
+    brews:
+    casks:
+    flatpaks:
+      - org.signal.Signal
+      - com.nextcloud.desktopclient.nextcloud
+  work:
+    brews:
+      - kanata
+      - awscli
+      - onedrive-cli
+      - quarto
+      - duckdb
+    casks:
+    flatpaks:
+      - io.dbeaver.DBeaverCommunity
+      # - org.kde.okular
