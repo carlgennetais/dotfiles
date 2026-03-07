@@ -1,38 +1,45 @@
 #!/bin/bash
+
+# default
 brew bundle --file=/dev/stdin <<EOF
-# default brews
 {{ range .packages.default.brews -}}
 brew {{ . | quote }}
 {{ end -}}
 {{ range .packages.default.casks -}}
 cask {{ . | quote }}
 {{ end -}}
-# personal
+{{ range .packages.default.flatpaks -}}
+flatpak {{ . | quote }}
+{{ end -}}
+EOF
+
+
 {{ if eq .chezmoi.hostname "bluefin-desktop" -}}
+# personal
+brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.personal.brews -}}
 brew {{ . | quote }}
 {{ end -}}
 {{ range .packages.personal.casks -}}
 cask {{ . | quote }}
 {{ end -}}
+{{ range .packages.personal.flatpaks -}}
+flatpak {{ . | quote }}
 {{ end -}}
-# work
+EOF
+{{ end -}}
+
 {{ if eq .chezmoi.hostname "carl-precision" -}}
+# work
+brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.work.brews -}}
 brew {{ . | quote }}
 {{ end -}}
 {{ range .packages.work.casks -}}
 cask {{ . | quote }}
 {{ end -}}
+{{ range .packages.work.flatpaks -}}
+flatpak {{ . | quote }}
 {{ end -}}
 EOF
-
-flatpak install {{ .packages.default.flatpaks | join " " }}
-# personal
-{{ if eq .chezmoi.hostname "bluefin-desktop" -}}
-flatpak install {{ .packages.personal.flatpaks | join " " }}
-{{ end -}}
-# work
-{{ if eq .chezmoi.hostname "carl-precision" -}}
-flatpak install {{ .packages.work.flatpaks | join " " }}
 {{ end -}}

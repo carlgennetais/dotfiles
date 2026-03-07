@@ -14,11 +14,8 @@ packages:
       - neovim
       - visidata
       # Development tools
-      - gh
-      - glab
       - git
       - uv
-      - chezmoi
       # media
       - ffmpeg
       - mat2
@@ -44,6 +41,7 @@ packages:
     flatpaks:
       - org.signal.Signal
       - com.nextcloud.desktopclient.nextcloud
+      - com.bitwarden.desktop
   work:
     brews:
       - kanata
