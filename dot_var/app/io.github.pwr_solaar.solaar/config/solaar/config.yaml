@@ -7,12 +7,12 @@
     haptic-play, sidetone, equalizer, adc_power_management]
   _battery: 4096
   _modelId: B02340820000
-  _sensitive: {divert-keys: true, reprogrammable-keys: ignore, thumb-scroll-mode: true}
+  _sensitive: {divert-keys: true, hires-scroll-mode: ignore, hires-smooth-invert: ignore, hires-smooth-resolution: ignore, thumb-scroll-mode: true}
   _serial: 05FCB6F4
   _unitId: 05FCB6F4
   _wpid: '4082'
   change-host: null
-  divert-keys: {82: 0, 83: 0, 86: 1, 195: 2, 196: 0}
+  divert-keys: {82: 0, 83: 0, 86: 1, 195: 0, 196: 0}
   dpi: 1000
   hires-scroll-mode: false
   hires-smooth-invert: false

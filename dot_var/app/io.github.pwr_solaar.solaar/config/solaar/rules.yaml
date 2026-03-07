@@ -2,42 +2,42 @@
 ---
 - Key: [Forward Button, pressed]
 - KeyPress:
-  - [Control_L, w]
-  - click
+    - [Control_L, w]
+    - click
 ...
 ---
 - MouseGesture: Mouse Down
 - KeyPress:
-  - [Control_L, r]
-  - click
+    - [Control_L, r]
+    - click
 ...
 ---
 - MouseGesture: Mouse Right
 - KeyPress:
-  - [Super_R, h]
-  - click
+    - [Super_R, h]
+    - click
 ...
 ---
 - MouseGesture: Mouse Left
 - KeyPress:
-  - [Super_R, l]
-  - click
+    - [Super_R, l]
+    - click
 ...
 ---
 - MouseGesture: Mouse Up
 - KeyPress:
-  - [Super_R, o]
-  - click
+    - [Super_R, o]
+    - click
 ...
 ---
 - Test: [thumb_wheel_up, 10]
 - KeyPress:
-  - [Control_L, Tab]
-  - click
+    - [Control_L, Tab]
+    - click
 ...
 ---
 - Test: [thumb_wheel_down, 10]
 - KeyPress:
-  - [Control_L, Shift_L, Tab]
-  - click
+    - [Control_L, Shift_L, Tab]
+    - click
 ...
