@@ -1,0 +1,125 @@
+{
+  "imports": {
+    "prefix": "imp",
+    "body": [
+      "import os",
+      "import re",
+      "",
+      "import ibis",
+      "import yaml",
+      "import altair as alt",
+      "import janitor.polars",
+      "import polars as pl",
+      "from polars import col as c",
+      "import polars.selectors as cs",
+      "from IPython.display import display",
+      "from pathlib import Path",
+
+      "",
+      "# custom cleaning and testing functions",
+      "from dynabuy_data_utils import *",
+      "",
+      "# set up connection to local db",
+      "ibis.options.interactive = True",
+      "ibis.options.repr.interactive.max_rows = 30",
+      "dev_wh = ibis.duckdb.connect(Path.home() / \"data/dev_wh.duckdb\", read_only=True)",
+      "",
+      "pl.Config.set_tbl_width_chars(1000)  # largeur max du tableau",
+      "pl.Config.set_fmt_str_lengths(20)  # longueur max des chaines de caractères",
+      "pl.Config.set_tbl_cols(-1) # nombre de colonnes max",
+      "pl.Config.set_float_precision(2)  # precision des float",
+      "alt.renderers.enable(\"browser\")"
+    ]
+  },
+  "dev_wh": {
+    "prefix": "dev_",
+    "body": [
+      "${1} = dev_wh.table(\"$1\", database=\"${2:main_03_marts}\").to_polars()",
+      "${1}"
+    ]
+  },
+  "sums": {
+    "prefix": ".sums",
+    "description": "add horizontal and vertical TOTAL sums",
+    "body": [
+      "$1_with_sums = ${1}.with_columns(pl.sum_horizontal(cs.numeric()).alias(\"[TOTAL]\"))",
+      "$1_with_sums = pl.concat([$1_with_sums, $1_with_sums.sum().fill_null(\"[TOTAL]\")])",
+      "$1_with_sums"
+    ]
+  },
+  "loaders": {
+    "prefix": "loads",
+    "body": [
+      "# ave members",
+      "ave = load_ave_members()",
+      "ave = clean_with_insee_data(ave)",
+      "ave = ave[ave.actif_membre].copy()",
+      "",
+      "conso = load_conso()",
+      "resiliations, *_ = load_fichier_resiliations()",
+      "dpo_mails = load_fichier_oppositions()"
+    ]
+  },
+  "params": {
+    "prefix": "params",
+    "body": [
+      "PARAMS_PATH = Path().home() / \"data/dynabuy_params\"",
+      "with open(PARAMS_PATH / \"clickup_demandes_data.yml\") as file:",
+      "\tparams = yaml.safe_load(file)"
+    ]
+  },
+  "column_types_order": {
+    "prefix": "# ids",
+    "description": "recommended data type order for columns",
+    "body": [
+      "# --- ids",
+      "${1}",
+      "# --- strings",
+      "# --- numerics",
+      "# --- booleans",
+      "# --- dates",
+      "# --- timestamps"
+    ]
+  },
+  "dev_source": {
+    "prefix": "devs",
+    "body": ["${1} = dev_source(\"local_prod\", \"$1\")"]
+  },
+  "dev_ref": {
+    "prefix": "devr",
+    "body": ["${1} = dev_ref(\"$1\")"]
+  },
+  "dbt model": {
+    "prefix": "def model",
+    "description": "DBT model in ibis",
+    "body": [
+      "from dbt_ibis import depends_on, source",
+      "from ibis import _",
+      "",
+      "@depends_on(source(\"local_prod\", \"${1}\"), ref(\"${2:stg_}\"),ref(\"${3:stg_}\"))",
+      "def model($1, $2, $3):",
+      "\treturn $1.join($2).join($3).select(",
+      "\t\t# --- ids",
+      "\t\t# --- strings",
+      "\t\t# --- numerics",
+      "\t\t# --- booleans",
+      "\t\t# --- dates",
+      "\t\t# --- timestamps",
+      "\t)"
+    ]
+  },
+  "value_counts": {
+    "prefix": ".vlc",
+    "description": "polars value counts for a column",
+    "body": [".select(c.${1}.value_counts(sort=True)).unnest('$1')"]
+  },
+  "with polars config": {
+    "prefix": "withconfig",
+    "description": "polars config context manager",
+    "body": [
+      "with pl.Config(set_fmt_str_lengths=40, tbl_rows=30, tbl_width_chars=1000):",
+      "\tdisplay(",
+      ")"
+    ]
+  }
+}

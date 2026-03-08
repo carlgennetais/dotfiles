@@ -1,0 +1,18 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "python",
+          "markdown"
+        ],
+        "path": "./python.json"
+      },
+      {
+        "language": "all",
+        "path": "./dynabuy.json"
+      }
+    ]
+  },
+  "name": "my-snippets"
+}
