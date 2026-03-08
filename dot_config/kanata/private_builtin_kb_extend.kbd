@@ -1,0 +1,47 @@
+;; Kanata configuration mimicking Keychron V5 Max ANSI Knob layout
+;; Using QWERTY layout since that's what's set in Ubuntu
+
+;; TODO: add service autostart
+
+(defcfg
+  ;; apply only to built-in laptop keyboardexport USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{serial}==\"*vial:f64c2b3c*\", MODE=\"0660\", GROUP=\"$USER_GID\", TAG+=\"uaccess\", TAG+=\"udev-acl\"" > /etc/udev/rules.d/99-vial.rules && udevadm control --reload && udevadm trigger'
+  linux-dev /dev/input/event3
+)
+
+;; Define source keys (QWERTY layout since that's what's set in Ubuntu)
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    
+  caps a    s    d    f    g    h    j    k    l    ;    '    \   ret
+  lsft <    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Define aliases for special actions
+(defalias
+  ;; Layer toggles
+  fnl  (layer-while-held extend)    ;; extend layer
+  
+)
+
+;; Base layer (keeping QWERTY layout)
+(deflayer base
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ] 
+  @fnl a    s    d    f    g    h    j    k    l    ;    '    \    ret
+  lsft <    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; extend layer 
+;; _     _    _    _    _    _    _    _    _    _    _    _    _    
+(deflayer extend
+  esc  mute vold volu f20  f5   f6   f7   f8   f9   ⎙    f11  f12
+  lrld f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  _    _    del
+  _    _    _    C-⇞  C-⇟ _    home  ⇟    ⇞    end  _    _    _
+  _    lctl lmet lalt lsft _    ←    ↓    ↑    →    ⌫    _    _  ⎙
+  _    _    _    _    _    mlft mmid mrgt mwu  mwd  _    _    _ 
+  _    _    _              _              _    _    _
+)
