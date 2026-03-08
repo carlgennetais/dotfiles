@@ -1,7 +1,7 @@
-# command = /usr/bin/fish
 command = export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH; /home/linuxbrew/.linuxbrew/bin/byobu
 
 # custom keybinds
+# re-enable caps lock + E-R (qmk) to change vim buffer
 keybind = ctrl+page_up=csi:5;5~
 keybind = ctrl+page_down=csi:6;5~
 # keybind = ctrl+shift+physical:comma=reload_config
