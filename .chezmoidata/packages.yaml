@@ -2,20 +2,35 @@ packages:
   default:
     brews:
       - npm
+      - bbrew
+      # Modern CLI tools
+      - bat
+      - eza
+      - fd
+      - rg
+      - dysk
+      - tealdeer
       - htop
       - ncdu
       - lazygit
       - lazydocker
       - fdupes
+      - yazi
       # Shell enhancements
       - tmux
       - byobu
+      - starship
+      - zoxide
+      - trash-cli
       # IDE
       - neovim
       - visidata
       # Development tools
+      - gh
+      - glab
       - git
       - uv
+      - chezmoi
       # media
       - ffmpeg
       - mat2
@@ -35,13 +50,6 @@ packages:
       - net.cozic.joplin_desktop
       - com.slack.Slack
       # - org.videolan.VLC
-  personal:
-    brews:
-    casks:
-    flatpaks:
-      - org.signal.Signal
-      - com.nextcloud.desktopclient.nextcloud
-      - com.bitwarden.desktop
   work:
     brews:
       - kanata
@@ -53,3 +61,9 @@ packages:
     flatpaks:
       - io.dbeaver.DBeaverCommunity
       # - org.kde.okular
+  personal:
+    brews:
+    casks:
+    flatpaks:
+      - org.signal.Signal
+      - com.nextcloud.desktopclient.nextcloud
