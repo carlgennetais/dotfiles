@@ -185,8 +185,6 @@ overview {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "vicinae" "server"
 environment {
   XDG_CURRENT_DESKTOP "niri"
 }
@@ -266,15 +264,6 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
-// Override to disable super+tab
-recent-windows {
-    binds {
-        Alt+Tab         { next-window scope="output"; }
-        Alt+Shift+Tab   { previous-window scope="output"; }
-        Alt+grave       { next-window filter="app-id"; }
-        Alt+Shift+grave { previous-window filter="app-id"; }
-    }
-}
 
 
 // Include dms files
@@ -290,4 +279,5 @@ include "custom/binds.kdl"
 include "custom/input.kdl"
 include "custom/windowrules.kdl"
 include "custom/ui.kdl"
+include "custom/alttab.kdl"
 
