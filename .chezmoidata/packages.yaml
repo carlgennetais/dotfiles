@@ -39,6 +39,7 @@ packages:
       - qpdf
       # - espanso # BUG: not available
     casks:
+      - "claude-code"
       - "font-jetbrains-mono-nerd-font"
       - "font-fira-code-nerd-font"
       - "font-meslo-lg-nerd-font"
@@ -59,6 +60,7 @@ packages:
       - duckdb
       # - quarto # BUG: not available
     casks:
+      - quarto
     flatpaks:
       - io.dbeaver.DBeaverCommunity
       # - org.kde.okular
