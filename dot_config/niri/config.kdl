@@ -275,9 +275,10 @@ include "dms/outputs.kdl"
 include "dms/cursor.kdl"
 
 // include custom config
+include "custom/alttab.kdl"
 include "custom/binds.kdl"
 include "custom/input.kdl"
-include "custom/windowrules.kdl"
+include "custom/startup.kdl"
 include "custom/ui.kdl"
-include "custom/alttab.kdl"
+include "custom/windowrules.kdl"
 

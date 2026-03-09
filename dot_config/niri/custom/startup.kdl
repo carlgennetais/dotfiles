@@ -1,2 +1,4 @@
+// see also ~/.local/share/autostart/
 spawn-at-startup "vicinae" "server"
-// TODO: nextcloud and solaar
+spawn-at-startup "librewolf"
+spawn-at-startup "ghostty"
