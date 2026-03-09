@@ -37,7 +37,7 @@ packages:
       - imagemagick
       # pdf
       - qpdf
-      # - espanso
+      # - espanso # BUG: not available
     casks:
       - "font-jetbrains-mono-nerd-font"
       - "font-fira-code-nerd-font"
@@ -52,18 +52,21 @@ packages:
       # - org.videolan.VLC
   work:
     brews:
+      - lastpass-cli
       - kanata
       - awscli
       - onedrive-cli
-      # - quarto # not available
       - duckdb
+      # - quarto # BUG: not available
     casks:
     flatpaks:
       - io.dbeaver.DBeaverCommunity
       # - org.kde.okular
   personal:
     brews:
+      - bitwarden-cli
     casks:
     flatpaks:
       - org.signal.Signal
       - com.nextcloud.desktopclient.nextcloud
+      - com.ticktick.TickTick
