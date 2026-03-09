@@ -50,6 +50,7 @@ packages:
       - io.gitlab.librewolf-community
       - net.cozic.joplin_desktop
       - com.slack.Slack
+      - com.spotify.Client
       # - org.videolan.VLC
   work:
     brews:
@@ -58,9 +59,8 @@ packages:
       - awscli
       - onedrive-cli
       - duckdb
-      # - quarto # BUG: not available
     casks:
-      - quarto
+      # - quarto # BUG: not available
     flatpaks:
       - io.dbeaver.DBeaverCommunity
       # - org.kde.okular
