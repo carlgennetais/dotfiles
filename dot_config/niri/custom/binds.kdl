@@ -3,8 +3,8 @@ binds {
     Mod+P hotkey-overlay-title="Present this window" { set-dynamic-cast-window;}
     Mod+Shift+P hotkey-overlay-title="Stop sharing screen" { clear-dynamic-cast-target;}
     Mod+Ctrl+P hotkey-overlay-title="Present this monitor" { set-dynamic-cast-monitor;}
+    Mod+Shift+Ctrl+P hotkey-overlay-title="Mirror screen" repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
     Mod+Ctrl+Shift+F hotkey-overlay-title="Windowed fullscreen" { toggle-windowed-fullscreen; }
-    Mod+Shift+M hotkey-overlay-title="Mirror screen" repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
 
     // launcher and apps shortcuts
     Alt+Space hotkey-overlay-title="Open Vicinae" { spawn "vicinae" "toggle"; }
@@ -16,7 +16,7 @@ binds {
     Mod+Shift+K     { move-window-up-or-to-workspace-up; }
     Mod+Shift+H     { move-column-left-or-to-monitor-left; }
     Mod+Shift+L     { move-column-right-or-to-monitor-right; }
-    Mod+M hotkey-overlay-title="Move workspace to next monitor" {move-workspace-to-monitor-next;}
+    Mod+Shift+M hotkey-overlay-title="Move workspace to next monitor" {move-workspace-to-monitor-next;}
 
     // session
     Mod+Escape hotkey-overlay-title="Lock Screen" {
@@ -24,4 +24,9 @@ binds {
     }
     Mod+Shift+Escape { power-off-monitors; }
 
+    // switch workspace and column mouse wheel shortcuts
+    Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+Shift+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollDown { focus-column-right; }
+    Mod+WheelScrollUp { focus-column-left; }
 }
