@@ -67,9 +67,10 @@ packages:
       # - org.kde.okular
   personal:
     brews:
-      - bitwarden-cli
+      - bitwarden-cli # TODO: use bw flatpak cli instead ?
     casks:
     flatpaks:
       - org.signal.Signal
       - com.nextcloud.desktopclient.nextcloud
       - com.ticktick.TickTick
+      - com.bitwarden.desktop
