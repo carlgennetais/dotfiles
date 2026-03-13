@@ -1,0 +1,24 @@
+#!/bin/bash
+# Send a notification if working from home (IP address doesn't match office IP)
+# use crontab -e to add the following line to run this script at 9:30 and 17:30 every weekday
+
+DYNABUY_OFFICE_IP="{{- (index (lastpass "ip_siege") 0 ).note.hostname | trim }}"
+
+# Required for notify-send to work from cron
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"
+
+CURRENT_IP=$(curl -4 -s --max-time 5 https://api.ipify.org ||
+  curl -4 -s --max-time 5 https://ifconfig.me ||
+  curl -4 -s --max-time 5 https://icanhazip.com)
+
+if [ -z "$CURRENT_IP" ]; then
+  notify-send -u normal "IP Check" "Could not determine public IP address"
+  exit 1
+fi
+
+if [ "$CURRENT_IP" == "$DYNABUY_OFFICE_IP" ]; then
+  notify-send -u normal "🍴 Rappel : Commander refectory" "https://www.refectory.fr/carte"
+else
+  notify-send -u normal "🕤 Rappel : Badger" "https://dynabuy.cloud-horoquartz.fr/webquartz/ux/home"
+fi
