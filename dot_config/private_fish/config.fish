@@ -1,7 +1,10 @@
 set -gx EDITOR nvim
+set -gx GPG_TTY $(tty)
+set -gx _ZO_EXCLUDE_DIRS "/var/home/*:"
 
 alias v='nvim'
 alias gg='lazygit'
+alias cz='chezmoi'
 
 # ls aliases
 if [ "$(command -v eza)" ]
