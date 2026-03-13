@@ -51,6 +51,7 @@ packages:
       - net.cozic.joplin_desktop
       - com.slack.Slack
       - com.spotify.Client
+      - org.libreoffice.LibreOffice
       # - org.videolan.VLC
   work:
     brews:
