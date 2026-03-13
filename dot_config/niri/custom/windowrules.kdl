@@ -1,3 +1,9 @@
+workspace "dev" {
+  open-on-output "Dell Inc. DELL U3225QE 2QH0834"
+}
+workspace "mail" {}
+workspace "other" {}
+
 window-rule {
     match app-id=r#"^com\.nextcloud\.desktopclient\.nextcloud$"#
     open-floating true
@@ -33,4 +39,22 @@ window-rule {
     block-out-from "screen-capture"
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
+}
+window-rule {
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
+    match app-id="librewolf"
+    match app-id="firefox"
+    match app-id="ClickUp"
+    exclude title="^ClickUp Command Bar$"
+    open-on-workspace "dev"
+}
+window-rule {
+  match title=r#"^Outlook \(PWA\)"#
+  match title=r#"^Microsoft Teams \(PWA\)"#
+  match app-id="Slack"
+  open-on-workspace "mail"
+}
+window-rule {
+  match app-id="solaar"
+  open-on-workspace "other"
 }
