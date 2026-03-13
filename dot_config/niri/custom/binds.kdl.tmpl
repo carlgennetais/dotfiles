@@ -31,7 +31,7 @@ binds {
     Mod+WheelScrollUp { focus-column-left; }
 
     // quick app access 
-    Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun.sh" "-c" "ghostty" "--" "/usr/bin/ghostty --gtk-single-instance=true"; }
+    Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun.sh" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
     Mod+B hotkey-overlay-title="Focus or open Browser" {spawn "nirirun.sh" "-c" "librewolf" "--" "flatpak" "run" "io.gitlab.librewolf-community"; }
 {{ if eq .chezmoi.hostname "carl-precision" -}}
     // work-only config 
