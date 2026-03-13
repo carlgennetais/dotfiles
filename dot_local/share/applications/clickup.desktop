@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=ClickUp
+Comment=ClickUp Desktop
+Icon=/home/carl/AppImages/.icons/clickup
+TryExec=/home/carl/AppImages/clickup.appimage
+Exec=env DESKTOPINTEGRATION=1 /home/carl/AppImages/clickup.appimage --no-sandbox %U
+Terminal=false
+MimeType=x-scheme-handler/clickup;
+Categories=Utility;
+StartupWMClass=ClickUp
+X-AppImage-Version=260210al7vspjfr
+X-AppImage-Name=ClickUp
