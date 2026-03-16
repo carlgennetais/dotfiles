@@ -4,6 +4,7 @@ command = export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH; /home/linuxbrew/.li
 # re-enable caps lock + E-R (qmk) to change vim buffer
 keybind = ctrl+page_up=csi:5;5~
 keybind = ctrl+page_down=csi:6;5~
+keybind = ctrl+enter=text:\x1b[13;5u                                          
 # keybind = ctrl+shift+physical:comma=reload_config
 
 # Font Configuration
@@ -51,7 +52,6 @@ gtk-titlebar = false
 # Shell integration
 shell-integration = detect
 shell-integration-features = cursor,sudo,title,no-cursor
-keybind = shift+enter=text:\n
 
 # Rando stuff
 gtk-single-instance = true
