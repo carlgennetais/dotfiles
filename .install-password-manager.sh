@@ -7,9 +7,9 @@ carl-precision)
   brew install lastpass-cli
   ;;
 bluefin-desktop)
-  type bitwarden >/dev/null 2>&1 && exit
+  type bw >/dev/null 2>&1 && exit
   # TODO: use bw flatpak cli instead ?
-  echo brew install bitwarden-cli
+  brew install bitwarden-cli
   ;;
 *)
   echo "this host is not supported by this script"
