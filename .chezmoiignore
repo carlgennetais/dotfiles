@@ -1,0 +1,7 @@
+.config/nvim/lazyvim.json
+{{- if ne .chezmoi.hostname "carl-precision" }}
+# only manage these files on work laptop
+.local/bin/badge-notification.sh
+.local/share/applications/*clickup*
+.local/share/applications/org.chromium.Chromium.*
+{{- end }}
