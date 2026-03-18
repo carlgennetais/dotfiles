@@ -32,6 +32,7 @@
       }
    },
    "fallbacks": [
+      "shortcuts:3b8bd0cf-4f1d-4ed6-b7a8-b15ddd793c19",
       "shortcuts:4ec83355-121c-4183-95ee-b8cb5b93dae0",
       "files:search"
    ],
@@ -66,6 +67,9 @@
          "entrypoints": {
             "15d98ea0-4e5d-4329-b62f-97095c246f69": {
                "alias": "yt"
+            },
+            "3b8bd0cf-4f1d-4ed6-b7a8-b15ddd793c19": {
+               "alias": "ddg"
             },
             "4ec83355-121c-4183-95ee-b8cb5b93dae0": {
                "alias": "d",
