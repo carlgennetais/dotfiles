@@ -48,6 +48,12 @@
          }
       },
       "files": {
+         "preferences": {
+            "autoIndexing": true,
+            "excludedPaths": "/var/home/carl/.local",
+            "paths": "/var/home/carl",
+            "watcherPaths": ""
+         },
          "entrypoints": {
             "search": {
                "alias": "~"
