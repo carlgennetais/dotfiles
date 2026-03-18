@@ -52,6 +52,7 @@ packages:
       - com.slack.Slack
       - com.spotify.Client
       - org.libreoffice.LibreOffice
+      # - ca.andyholmes.Valent # TODO: needs flatpak repo install
       # - org.videolan.VLC
   work:
     brews:
@@ -67,10 +68,11 @@ packages:
       # - org.kde.okular
   personal:
     brews:
-      - bitwarden-cli # TODO: use bw flatpak cli instead ?
+      - bitwarden-cli
     casks:
     flatpaks:
       - org.signal.Signal
       - com.nextcloud.desktopclient.nextcloud
       - com.ticktick.TickTick
       - com.bitwarden.desktop
+      - com.xnview.XnViewMP
