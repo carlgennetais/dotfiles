@@ -1,6 +1,7 @@
 set -gx EDITOR nvim
 set -gx GPG_TTY $(tty)
 set -gx _ZO_EXCLUDE_DIRS "/var/home/*:"
+set -gx FZF_ALT_C_OPTS "--walker-skip .git,miniconda3,.venv,build,dist,node_modules,*.egg-info,*.eggs,.cache,.local,.var,.npm"
 
 {{ if eq .chezmoi.hostname "carl-precision" -}}
 # work-only config 
