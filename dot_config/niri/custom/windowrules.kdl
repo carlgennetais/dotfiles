@@ -1,36 +1,14 @@
+// workspaces
 workspace "dev" {
   open-on-output "Dell Inc. DELL U3225QE 2QH0834"
 }
 workspace "mail" {}
 workspace "other" {}
 
+// apps
 window-rule {
     match app-id=r#"^com\.nextcloud\.desktopclient\.nextcloud$"#
     open-floating true
-}
-window-rule {
-    match is-window-cast-target=true
-
-    focus-ring {
-        on
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
-
-    border {
-        on
-        inactive-color "#7d0d2d"
-    }
-
-    shadow {
-        on
-        color "#7d0d2d70"
-    }
-
-    tab-indicator {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
 }
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
@@ -57,4 +35,36 @@ window-rule {
 window-rule {
   match app-id="solaar"
   open-on-workspace "other"
+}
+
+window-rule {
+  match app-id="ticktick"
+  open-on-output "ViewSonic Corporation VG2448 V5E203240833"
+}
+
+
+// presentation
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        on
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        on
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        on
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
 }
