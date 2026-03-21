@@ -52,8 +52,8 @@ packages:
       - com.slack.Slack
       - com.spotify.Client
       - org.libreoffice.LibreOffice
+      - org.videolan.VLC
       # - ca.andyholmes.Valent # TODO: needs flatpak repo install
-      # - org.videolan.VLC
   work:
     brews:
       - lastpass-cli
@@ -65,10 +65,12 @@ packages:
       # - quarto # BUG: not available
     flatpaks:
       - io.dbeaver.DBeaverCommunity
+      - org.chromium.Chromium
       # - org.kde.okular
   personal:
     brews:
       - bitwarden-cli
+      - yt-dlp
     casks:
     flatpaks:
       - org.signal.Signal
