@@ -1,0 +1,33 @@
+#!/bin/bash
+
+content=$(dms cl paste)
+
+choice=$(echo -e "join lines\ntrim whitespace\nto filename\nlowercase\nuppercase\nbreak lines\nremove empty lines" | fuzzel -d)
+
+case "$choice" in
+"join lines")
+	result=$(echo "$content" | sed ':a;N;$!ba;s/\n/ /g')
+	;;
+"trim whitespace")
+	result=$(echo "$content" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+	;;
+"to filename")
+	result=$(echo "$content" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/_/g')
+	;;
+"lowercase")
+	result=$(echo "$content" | tr '[:upper:]' '[:lower:]')
+	;;
+"uppercase")
+	result=$(echo "$content" | tr '[:lower:]' '[:upper:]')
+	;;
+"break lines")
+	result=$(echo "$content" | sed 's/, /\n/g')
+	;;
+"remove empty lines")
+	result=$(echo "$content" | sed '/^\s*$/d')
+	;;
+esac
+
+if [ -n "$result" ]; then
+	echo -n "$result" | dms cl copy
+fi

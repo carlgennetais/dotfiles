@@ -30,15 +30,18 @@ binds {
     Mod+WheelScrollDown { focus-column-right; }
     Mod+WheelScrollUp { focus-column-left; }
 
+    // productivity
+    Mod+Shift+C { spawn "text_transform";}
+
     // quick app access 
-    Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun.sh" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
-    Mod+B hotkey-overlay-title="Focus or open Browser" {spawn "nirirun.sh" "-c" "librewolf" "--" "flatpak" "run" "io.gitlab.librewolf-community"; }
+    Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
+    Mod+B hotkey-overlay-title="Focus or open Browser" {spawn "nirirun" "-c" "librewolf" "--" "flatpak" "run" "io.gitlab.librewolf-community"; }
 {{ if eq .chezmoi.hostname "carl-precision" -}}
     // work-only config 
-    Mod+1 hotkey-overlay-title="Focus or open Outlook" {spawn "nirirun.sh" "-t" r#"Outlook \(PWA\) - Courrier"# "--" "flatpak" "run" "--command=/app/bin/chromium" "org.chromium.Chromium" "--profile-directory=Default" "--app-id=pkooggnaalmfkidjmlhoelhdllpphaga";}
-    Mod+2 hotkey-overlay-title="Focus or open Calendar" {spawn "nirirun.sh" "-t" r#"Outlook \(PWA\) - Calendrier"# "--" "flatpak" "run" "--command=/app/bin/chromium" "org.chromium.Chromium" "--profile-directory=Default" "--app-id=pkooggnaalmfkidjmlhoelhdllpphaga" "--app-launch-url-for-shortcuts-menu-item=https://outlook.office365.com/calendar";}
-    Mod+3 hotkey-overlay-title="Focus or open Teams" {spawn "nirirun.sh" "-t" r#"Microsoft Teams \(PWA\) -"# "--" "flatpak" "run" "--command=/app/bin/chromium" "org.chromium.Chromium" "--profile-directory=Default" "--app-id=ompifgpmddkgmclendfeacglnodjjndh";}
-    Mod+4 hotkey-overlay-title="Focus or open Clickup" {spawn "nirirun.sh" "-c" "Clickup" "--" "/home/carl/AppImages/clickup.appimage"; }
+    Mod+1 hotkey-overlay-title="Focus or open Outlook" {spawn "nirirun" "-t" r#"Outlook \(PWA\) - Courrier"# "--" "flatpak" "run" "--command=/app/bin/chromium" "org.chromium.Chromium" "--profile-directory=Default" "--app-id=pkooggnaalmfkidjmlhoelhdllpphaga";}
+    Mod+2 hotkey-overlay-title="Focus or open Calendar" {spawn "nirirun" "-t" r#"Outlook \(PWA\) - Calendrier"# "--" "flatpak" "run" "--command=/app/bin/chromium" "org.chromium.Chromium" "--profile-directory=Default" "--app-id=pkooggnaalmfkidjmlhoelhdllpphaga" "--app-launch-url-for-shortcuts-menu-item=https://outlook.office365.com/calendar";}
+    Mod+3 hotkey-overlay-title="Focus or open Teams" {spawn "nirirun" "-t" r#"Microsoft Teams \(PWA\) -"# "--" "flatpak" "run" "--command=/app/bin/chromium" "org.chromium.Chromium" "--profile-directory=Default" "--app-id=ompifgpmddkgmclendfeacglnodjjndh";}
+    Mod+4 hotkey-overlay-title="Focus or open Clickup" {spawn "nirirun" "-c" "Clickup" "--" "/home/carl/AppImages/clickup.appimage"; }
 {{ end -}}
 
 }
