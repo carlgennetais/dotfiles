@@ -1,8 +1,14 @@
 // workspaces
 workspace "dev" {
   open-on-output "Dell Inc. DELL U3225QE 2QH0834"
+  open-on-output "Iiyama North America PL2492H 1151172001531"
 }
-workspace "mail" {}
+workspace "mail" {
+  open-on-output "Iiyama North America PL2492H 1151172001531"
+}
+workspace "chat" {
+  open-on-output "Iiyama North America PL2492H 1151172001531"
+}
 workspace "other" {}
 
 // apps
@@ -28,9 +34,12 @@ window-rule {
 }
 window-rule {
   match title=r#"^Outlook \(PWA\)"#
+  open-on-workspace "mail"
+}
+window-rule {
   match title=r#"^Microsoft Teams \(PWA\)"#
   match app-id="Slack"
-  open-on-workspace "mail"
+  open-on-workspace "chat"
 }
 window-rule {
   match app-id="solaar"
