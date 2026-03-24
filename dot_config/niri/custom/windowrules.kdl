@@ -1,14 +1,6 @@
-// workspaces
-workspace "dev" {
-  open-on-output "Dell Inc. DELL U3225QE 2QH0834"
-  open-on-output "Iiyama North America PL2492H 1151172001531"
-}
-workspace "mail" {
-  open-on-output "Iiyama North America PL2492H 1151172001531"
-}
-workspace "chat" {
-  open-on-output "Iiyama North America PL2492H 1151172001531"
-}
+workspace "dev" {}
+workspace "mail" {}
+workspace "chat" {}
 workspace "other" {}
 
 // apps
