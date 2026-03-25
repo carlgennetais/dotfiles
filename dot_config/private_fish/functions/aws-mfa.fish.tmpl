@@ -1,0 +1,35 @@
+function aws-mfa --description "Refresh AWS session credentials with MFA"
+    set -l MFA_ARN {{ (index (lastpass "aws-clef-perso-mfa-otp") 0 ).note.arn }}
+
+    if test (count $argv) -ne 1
+        echo "Usage: aws-mfa <token-code>"
+        return 1
+    end
+
+    set -l token_code $argv[1]
+
+    echo "Requesting session token..."
+    # "long-term" profile holds the permanent IAM access keys (no session token).
+    # STS exchanges these + MFA code for temporary credentials written to "default".
+    set -l output (aws sts get-session-token \
+        --serial-number $MFA_ARN \
+        --profile long-term \
+        --token-code $token_code \
+        --output json 2>&1)
+
+    if test $status -ne 0
+        echo "Error: $output"
+        return 1
+    end
+
+    set -l access_key (echo $output | jq -r '.Credentials.AccessKeyId')
+    set -l secret_key (echo $output | jq -r '.Credentials.SecretAccessKey')
+    set -l session_token (echo $output | jq -r '.Credentials.SessionToken')
+    set -l expiration (echo $output | jq -r '.Credentials.Expiration')
+
+    aws configure set aws_access_key_id $access_key --profile default
+    aws configure set aws_secret_access_key $secret_key --profile default
+    aws configure set aws_session_token $session_token --profile default
+
+    echo "Session credentials updated. Expires: $expiration"
+end
