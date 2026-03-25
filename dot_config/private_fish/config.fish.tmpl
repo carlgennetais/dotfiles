@@ -6,6 +6,9 @@ set -gx FZF_ALT_C_OPTS "--walker-skip .git,miniconda3,.venv,build,dist,node_modu
 {{ if eq .chezmoi.hostname "carl-precision" -}}
 # work-only config 
 set -gx CLICKUP_API_KEY {{ (index (lastpass "CLICKUP_API_KEY") 0 ).password | quote}}
+set -gx PKG_CONFIG_PATH "/home/linuxbrew/.linuxbrew/opt/mysql-client/lib/pkgconfig"
+set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/mysql-client/include"
+set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/mysql-client/lib"
 {{- end }}
 
 alias v='nvim'
