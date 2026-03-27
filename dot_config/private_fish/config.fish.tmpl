@@ -9,6 +9,8 @@ set -gx CLICKUP_API_KEY {{ (index (lastpass "CLICKUP_API_KEY") 0 ).password | qu
 set -gx PKG_CONFIG_PATH "/home/linuxbrew/.linuxbrew/opt/mysql-client/lib/pkgconfig"
 set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/mysql-client/include"
 set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/mysql-client/lib"
+# add work functions to path
+set -a fish_function_path ~/.config/fish/functions/work/
 {{- end }}
 
 alias v='nvim'
