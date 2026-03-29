@@ -1,0 +1,18 @@
+
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Calendrier (PWA)
+MimeType=x-scheme-handler/mailto;x-scheme-handler/chromium;
+Exec=flatpak 'run' '--command=/app/bin/chromium' 'org.chromium.Chromium' '--profile-directory=Default' '--app-id=eoficlgicibekocmfdomjbfnjmehnhcd' '--app-launch-url-for-shortcuts-menu-item=https://outlook.cloud.microsoft/calendar'
+Icon=/home/carl/.local/share/icons/custom/outlook_calendar.png
+StartupWMClass=crx_pkooggnaalmfkidjmlhoelhdllpphaga
+Actions=Nouvel--v-nement
+X-Flatpak-Part-Of=org.chromium.Chromium
+TryExec=/var/lib/flatpak/exports/bin/org.chromium.Chromium
+
+[Desktop Action Nouvel--v-nement]
+Name=Nouvel événement
+Exec=flatpak 'run' '--command=/app/bin/chromium' 'org.chromium.Chromium' '--profile-directory=Default' '--app-id=eoficlgicibekocmfdomjbfnjmehnhcd' '--app-launch-url-for-shortcuts-menu-item=https://outlook.cloud.microsoft/calendar/deeplink/compose'

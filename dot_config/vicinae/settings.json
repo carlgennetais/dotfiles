@@ -32,11 +32,38 @@
       }
    },
    "fallbacks": [
-      "shortcuts:3b8bd0cf-4f1d-4ed6-b7a8-b15ddd793c19",
+      "shortcuts:3602f71b-ea5f-4271-bc6d-6c40d7084ba2",
       "shortcuts:4ec83355-121c-4183-95ee-b8cb5b93dae0",
       "files:search"
    ],
    "providers": {
+      "@aparandeh/store.raycast.manage-clickup-tasks": {
+         "preferences": {
+            "listId": "901507517820",
+            "spaceId": "90152828315",
+            "teamId": "5730789"
+         }
+      },
+      "@tonka3000/store.raycast.gitlab": {
+         "preferences": {
+            "cirefreshinterval": "10",
+            "ignorecerts": false,
+            "includeEpicAncestor": false,
+            "instance": "https://gitlab.com/dev1451846",
+            "listdetails": false,
+            "poptoroot": false,
+            "primaryaction": "detail"
+         }
+      },
+      "clipboard": {
+         "entrypoints": {
+            "history": {
+               "preferences": {
+                  "defaultAction": "copy"
+               }
+            }
+         }
+      },
       "core": {
          "entrypoints": {
             "search-emojis": {
@@ -62,24 +89,48 @@
       },
       "power": {
          "entrypoints": {
+            "hibernate": {
+               "enabled": false
+            },
             "logout": {
                "preferences": {
                   "confirm": false
                }
+            },
+            "sleep": {
+               "enabled": false
+            },
+            "soft-reboot": {
+               "enabled": false
+            },
+            "suspend": {
+               "enabled": false
             }
          }
+      },
+      "raycast-compat": {
+         "enabled": true
       },
       "shortcuts": {
          "entrypoints": {
             "15d98ea0-4e5d-4329-b62f-97095c246f69": {
                "alias": "yt"
             },
-            "3b8bd0cf-4f1d-4ed6-b7a8-b15ddd793c19": {
-               "alias": "ddg"
+            "309e9054-79a5-4e39-806f-e2167479a134": {
+               "alias": "ave"
             },
             "4ec83355-121c-4183-95ee-b8cb5b93dae0": {
                "alias": "d",
                "enabled": true
+            },
+            "76c438d6-8856-4d57-bb05-046ff6c4f044": {
+               "alias": "dr"
+            },
+            "c1512cc2-363b-49ab-9d96-ee2b73533b0a": {
+               "alias": "sh"
+            },
+            "ce369b5f-7c98-4d77-9595-e4b74eef5c16": {
+               "alias": "dr"
             }
          }
       },

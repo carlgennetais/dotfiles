@@ -4,4 +4,5 @@
 .local/bin/badge-notification.sh
 .local/share/applications/*clickup*
 .local/share/applications/org.chromium.Chromium.*
+.config/fish/functions/work/
 {{- end }}

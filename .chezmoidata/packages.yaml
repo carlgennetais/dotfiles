@@ -16,6 +16,7 @@ packages:
       - lazydocker
       - fdupes
       - yazi
+      - rich
       # Shell enhancements
       - tmux
       - byobu
@@ -61,6 +62,7 @@ packages:
       - awscli
       - onedrive-cli
       - duckdb
+      - mysql-client
     casks:
       # - quarto # BUG: not available
     flatpaks:
