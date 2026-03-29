@@ -53,7 +53,7 @@ packages:
       - com.spotify.Client
       - org.libreoffice.LibreOffice
       - org.videolan.VLC
-      # - ca.andyholmes.Valent # TODO: needs flatpak repo install
+      # - ca.andyholmes.Valent # BUG: needs flatpak repo install, maybe with cz script ?
   work:
     brews:
       - lastpass-cli
