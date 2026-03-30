@@ -17,6 +17,7 @@ binds {
     Mod+Shift+H     { move-column-left-or-to-monitor-left; }
     Mod+Shift+L     { move-column-right-or-to-monitor-right; }
     Mod+Shift+M hotkey-overlay-title="Move workspace to next monitor" {move-workspace-to-monitor-next;}
+    Mod+0 {toggle-window-floating;}
 
     // session
     Mod+Escape hotkey-overlay-title="Lock Screen" {
@@ -36,6 +37,9 @@ binds {
     // quick app access 
     Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
     Mod+B hotkey-overlay-title="Focus or open Browser" {spawn "nirirun" "-c" "librewolf" "--" "flatpak" "run" "io.gitlab.librewolf-community"; }
+    Mod+O {spawn "nautilus" "Downloads";}
+    Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
+    Mod+Shift+T hotkey-overlay-title="Focus or open Terminal" {spawn "ghostty" "-e" "fish"; }
 {{ if eq .chezmoi.hostname "carl-precision" -}}
     // work-only config 
     Mod+1 hotkey-overlay-title="Focus or open Outlook" {spawn "nirirun" "-t" r#"Outlook \(PWA\)(?!.*Calendrier)"# "--" "gtk-launch" "org.chromium.Chromium.outlook_mail_pwa";}

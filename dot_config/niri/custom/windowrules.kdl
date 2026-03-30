@@ -17,11 +17,15 @@ window-rule {
     // block-out-from "screencast"
 }
 window-rule {
-    match app-id=r#"^com\.mitchellh\.ghostty$"#
     match app-id="librewolf"
     match app-id="firefox"
     match app-id="ClickUp"
     exclude title="^ClickUp Command Bar$"
+    open-on-workspace "dev"
+}
+window-rule {
+    //match app-id=r#"^com\.mitchellh\.ghostty$"#
+    match title=r#" byobu$"#
     open-on-workspace "dev"
 }
 window-rule {
