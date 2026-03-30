@@ -47,6 +47,11 @@ window-rule {
   open-on-output "ViewSonic Corporation VG2448 V5E203240833"
 }
 
+window-rule {
+  match app-id="at.yrlf.wl_mirror"
+  open-focused false
+}
+
 
 // presentation
 window-rule {

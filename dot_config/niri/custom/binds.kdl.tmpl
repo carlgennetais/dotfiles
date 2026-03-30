@@ -5,6 +5,7 @@ binds {
     Mod+Ctrl+P hotkey-overlay-title="Present this monitor" { set-dynamic-cast-monitor;}
     Mod+Shift+Ctrl+P hotkey-overlay-title="Mirror screen" repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
     Mod+Ctrl+Shift+F hotkey-overlay-title="Windowed fullscreen" { toggle-windowed-fullscreen; }
+    Mod+M {spawn "mirror-display";}
 
     // launcher and apps shortcuts
     Alt+Space hotkey-overlay-title="Open Vicinae" { spawn "vicinae" "toggle"; }
@@ -35,7 +36,6 @@ binds {
     Mod+Shift+V { spawn "text_transform";}
 
     // quick app access 
-    Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
     Mod+B hotkey-overlay-title="Focus or open Browser" {spawn "nirirun" "-c" "librewolf" "--" "flatpak" "run" "io.gitlab.librewolf-community"; }
     Mod+O {spawn "nautilus" "Downloads";}
     Mod+T hotkey-overlay-title="Focus or open Terminal" {spawn "nirirun" "-c" "ghostty" "--" "/usr/bin/ghostty" "--gtk-single-instance=true"; }
