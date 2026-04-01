@@ -1,2 +1,3 @@
 // see also ~/.local/share/autostart/
 //spawn-at-startup "vicinae" "server"
+spawn-at-startup "dsearch" "serve"
