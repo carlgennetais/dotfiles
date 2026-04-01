@@ -1,0 +1,14 @@
+#!/usr/bin/env fish
+
+set builtin eDP-1
+
+# Find the connector name of the other output (not eDP-1)
+set target (niri msg outputs | string match --regex '^Output (?!\"BOE).+ \((.+)\)' | tail -1)
+
+if test -z "$target"
+    echo "No external output found"
+    exit 1
+end
+
+echo "Mirroring $builtin → fullscreen on $target"
+wl-mirror --fullscreen-output "$target" "$builtin"

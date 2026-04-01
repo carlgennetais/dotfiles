@@ -2,7 +2,7 @@
 # Send a notification if working from home (IP address doesn't match office IP)
 # use crontab -e to add the following line to run this script at 9:30 and 17:30 every weekday
 
-DYNABUY_OFFICE_IP="{{- (index (lastpass "ip_siege") 0 ).note.hostname | trim }}"
+DYNABUY_OFFICE_IP="85.69.157.129"
 
 # Required for notify-send to work from cron
 export DISPLAY=:0

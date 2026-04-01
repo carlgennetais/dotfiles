@@ -11,6 +11,8 @@ set -gx CPPFLAGS "-I/home/linuxbrew/.linuxbrew/opt/mysql-client/include"
 set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/mysql-client/lib"
 # add work functions to path
 set -a fish_function_path ~/.config/fish/functions/work/
+# gnome keyring ssh agent
+set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 {{- end }}
 
 alias v='nvim'
