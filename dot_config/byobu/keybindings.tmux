@@ -1,6 +1,3 @@
-# change default tmux prefix for byobu
-set -g prefix F12
-unbind-key -n C-a
 
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
@@ -28,3 +25,16 @@ bind-key -T copy-mode-vi 'C-k' select-pane -U
 bind-key -T copy-mode-vi 'C-l' select-pane -R
 bind-key -T copy-mode-vi 'C-PageDown' select-window -t:+1
 bind-key -T copy-mode-vi 'C-PageUp' select-window -t:-1
+
+
+# change default Byobu/tmux prefix (C-a is used in shell to go to begining of line, and in vim to increment)
+unbind-key -n C-a
+set -g prefix2 F12
+set-option -g prefix 'M-Space'
+
+bind-key "r" source-file $BYOBU_PREFIX/share/byobu/profiles/tmuxrc \; display "Reloaded byobu"
+bind-key "Space" run-shell -b "/home/carl/.tmux/plugins/tmux-fzf/scripts/pane.sh switch"
+bind-key -T prefix b run-shell -b "~/.tmux/plugins/tmux-fzf/main.sh" 
+bind-key "`" last-window
+bind-key "|"  split-window -h
+bind-key "-" split-window -v
