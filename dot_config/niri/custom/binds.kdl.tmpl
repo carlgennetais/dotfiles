@@ -3,8 +3,8 @@ binds {
     Mod+P hotkey-overlay-title="Present this window" { set-dynamic-cast-window;}
     Mod+Shift+P hotkey-overlay-title="Stop sharing screen" { clear-dynamic-cast-target;}
     Mod+Ctrl+P hotkey-overlay-title="Present this monitor" { set-dynamic-cast-monitor;}
-    Mod+Shift+Ctrl+P hotkey-overlay-title="Mirror screen" repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
-    Mod+Ctrl+Shift+F hotkey-overlay-title="Windowed fullscreen" { toggle-windowed-fullscreen; }
+    // Mod+Shift+Ctrl+P hotkey-overlay-title="Mirror screen" repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
+    Mod+Shift+Ctrl+F hotkey-overlay-title="Windowed fullscreen" { toggle-windowed-fullscreen; }
     Mod+M {spawn "mirror-display";}
 
     // launcher and apps shortcuts
