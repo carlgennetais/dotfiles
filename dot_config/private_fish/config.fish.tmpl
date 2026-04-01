@@ -22,10 +22,13 @@ alias zz='zi'
 
 # ls aliases
 if [ "$(command -v eza)" ]
-    alias ll='eza -la --icons=auto --group-directories-first'
-    alias l.='eza -d .*'
-    alias ls='eza'
-    alias l1='eza -1'
+    alias ls='eza --group-directories-first'
+    alias ll='eza -la --icons --group-directories-first'
+    alias l.='eza -d --group-directories-first .*'
+    alias l1='eza -1 --group-directories-first'
+    alias lt='eza --tree --level=3 --icons --git' # tree
+    alias lr='eza -ls modified --icons --git' # most recent at the bottom
+    alias lss='eza -lrs size --icons --git' # biggest at the top
 end
 
 # ugrep for grep

@@ -1,6 +1,6 @@
 # ripgrep->fzf->vim [QUERY]
 function rgg
-    set -l RELOAD 'reload:rg --column --color=always --smart-case {q} || :'
+    set -l RELOAD 'reload:rg --hidden --column --color=always --smart-case {q} || :'
     set -l OPENER 'if test $FZF_SELECT_COUNT -eq 0
                     nvim {1} +{2}
                   else
@@ -16,4 +16,3 @@ function rgg
         --preview-window '~4,+{2}+4/3,<80(up)' \
         --query "$argv"
 end
-
