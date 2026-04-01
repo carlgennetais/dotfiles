@@ -1,4 +1,4 @@
-command = export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH; /home/linuxbrew/.linuxbrew/bin/byobu
+command = export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH; export BYOBU_TERM=tmux-256color; /home/linuxbrew/.linuxbrew/bin/byobu
 
 # custom keybinds
 # re-enable caps lock + E-R (qmk) to change vim buffer
@@ -23,7 +23,7 @@ cursor-style = block
 cursor-style-blink = true
 
 # Scrollback
-scrollback-limit = 3023
+# scrollback-limit = 3023
 
 # Terminal features
 mouse-hide-while-typing = true
@@ -57,4 +57,5 @@ shell-integration-features = cursor,sudo,title,no-cursor
 gtk-single-instance = true
 
 # Dank color generation
-theme = dankcolors
+#theme = dankcolors
+theme = TokyoNight Storm
