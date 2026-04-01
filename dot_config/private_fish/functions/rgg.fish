@@ -1,5 +1,5 @@
 # ripgrep->fzf->vim [QUERY]
-function rgg
+function rgg -d 'search inside files and open in nvim'
     set -l RELOAD 'reload:rg --hidden --column --color=always --smart-case {q} || :'
     set -l OPENER 'if test $FZF_SELECT_COUNT -eq 0
                     nvim {1} +{2}
