@@ -11,4 +11,4 @@ if test -z "$target"
 end
 
 echo "Mirroring $builtin → fullscreen on $target"
-wl-mirror --fullscreen-output "$target" "$builtin"
+wl-mirror --fullscreen-output "$target" "$builtin" && dms ipc call notifications toggleDoNotDisturb
