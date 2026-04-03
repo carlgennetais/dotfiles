@@ -54,6 +54,7 @@ packages:
       - com.spotify.Client
       - org.libreoffice.LibreOffice
       - org.videolan.VLC
+      - com.github.jeromerobert.pdfarranger
       # - ca.andyholmes.Valent # BUG: needs flatpak repo install, maybe with cz script ?
   work:
     brews:
