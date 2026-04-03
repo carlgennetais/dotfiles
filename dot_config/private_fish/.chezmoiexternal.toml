@@ -1,0 +1,5 @@
+["fzf-git.sh"]
+    type = "git-repo"
+    url = "https://github.com/junegunn/fzf-git.sh"
+    ["fzf-git.sh".pull]
+        args = ["--ff-only"]
