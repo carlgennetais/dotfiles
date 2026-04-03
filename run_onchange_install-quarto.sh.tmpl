@@ -1,0 +1,14 @@
+#!/bin/bash
+# quarto version: {{ .quarto.version }}
+
+set -euo pipefail
+
+QUARTO_VERSION="{{ .quarto.version }}"
+INSTALL_DIR="$HOME/.local/quarto"
+
+echo "Installing Quarto v${QUARTO_VERSION}..."
+rm -rf "$INSTALL_DIR"
+mkdir -p "$INSTALL_DIR"
+curl -sL "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz" \
+    | tar xz --strip-components=1 -C "$INSTALL_DIR"
+echo "Quarto v${QUARTO_VERSION} installed to ${INSTALL_DIR}"

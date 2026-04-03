@@ -2,6 +2,7 @@ set -gx EDITOR nvim
 set -gx GPG_TTY $(tty)
 # set -gx _ZO_EXCLUDE_DIRS "/var/home/*:"
 set -gx FZF_ALT_C_OPTS "--walker-skip .git,miniconda3,.venv,build,dist,node_modules,*.egg-info,*.eggs,.cache,.local,.var,.npm"
+set -gx HOME /var/home/carl # fix home path duplicates
 
 {{ if eq .chezmoi.hostname "carl-precision" -}}
 # work-only config 
@@ -12,8 +13,11 @@ set -gx LDFLAGS "-L/home/linuxbrew/.linuxbrew/opt/mysql-client/lib"
 # add work functions to path
 set -a fish_function_path ~/.config/fish/functions/work/
 # gnome keyring ssh agent
-set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
+#set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 {{- end }}
+
+
+fish_add_path ~/.local/quarto-1.9.36/bin
 
 alias v='nvim'
 alias gg='lazygit'
