@@ -46,6 +46,7 @@ window-rule {
 
 window-rule {
   match app-id="ticktick"
+  match app-id="spotify"
   open-on-output "ViewSonic Corporation VG2448 V5E203240833"
 }
 
