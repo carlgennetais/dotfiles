@@ -31,11 +31,13 @@ window-rule {
 window-rule {
   match title=r#"^Outlook \(PWA\)"#
   open-on-workspace "mail"
+  block-out-from "screencast"
 }
 window-rule {
   match title=r#"^Microsoft Teams \(PWA\)"#
   match app-id="Slack"
   open-on-workspace "chat"
+  block-out-from "screencast"
 }
 window-rule {
   match app-id="solaar"
