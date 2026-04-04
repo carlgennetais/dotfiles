@@ -32,8 +32,10 @@ binds {
     Mod+WheelScrollDown { focus-column-right; }
     Mod+WheelScrollUp { focus-column-left; }
 
+
     // productivity
     Mod+Shift+V { spawn "text_transform";}
+    Mod+Ctrl+Shift+V hotkey-overlay-title="Paste as typing" { spawn-sh "dms cl paste | wtype -";}
 
     // quick app access 
     Mod+B hotkey-overlay-title="Focus or open Browser" {spawn "nirirun" "-c" "librewolf" "--" "flatpak" "run" "io.gitlab.librewolf-community"; }

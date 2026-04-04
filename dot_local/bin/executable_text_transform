@@ -2,7 +2,7 @@
 
 content=$(dms cl paste)
 
-choice=$(echo -e "join lines\ntrim whitespace\nto filename\nlowercase\nuppercase\nbreak lines\nremove empty lines" | fuzzel -d)
+choice=$(echo -e "join lines\ntrim whitespace\nto filename\nlowercase\nuppercase\nbreak lines\nremove empty lines\ntype (wtype)" | fuzzel -d)
 
 case "$choice" in
 "join lines")
@@ -25,6 +25,10 @@ case "$choice" in
   ;;
 "remove empty lines")
   result=$(echo "$content" | sed '/^\s*$/d')
+  ;;
+"type (wtype)")
+  echo "$content" | wtype -
+  exit 0
   ;;
 esac
 
