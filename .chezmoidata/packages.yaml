@@ -40,7 +40,6 @@ packages:
       - qpdf
       # - espanso # BUG: not available
     casks:
-      - "claude-code"
       - "font-jetbrains-mono-nerd-font"
       - "font-fira-code-nerd-font"
       - "font-meslo-lg-nerd-font"
@@ -65,7 +64,7 @@ packages:
       - duckdb
       - mysql-client
     casks:
-      # - quarto # BUG: not available
+      - claude-code
     flatpaks:
       - io.dbeaver.DBeaverCommunity
       - org.chromium.Chromium
